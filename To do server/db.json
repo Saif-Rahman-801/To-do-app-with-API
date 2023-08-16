@@ -1,0 +1,41 @@
+{
+  "todoList": [
+    {
+      "id": 1,
+      "title": "demo to do 1",
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "title": "demo to do 2",
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "title": "demo to do 3",
+      "isComplete": false
+    },
+    {
+      "id": 1692162823050,
+      "title": "sleep"
+    },
+    {
+      "id": 1692162922622,
+      "title": "wake up"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "John"
+    },
+    {
+      "id": 2,
+      "name": "Smith"
+    },
+    {
+      "id": 3,
+      "name": "Bale"
+    }
+  ]
+}

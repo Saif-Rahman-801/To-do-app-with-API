@@ -1,0 +1,81 @@
+/* App.css */
+
+.to-do-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .to-do {
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button.add-btn {
+    background-color: #4caf50;
+  }
+  
+  button.edit-btn {
+    background-color: #2196f3;
+  }
+  
+  button.delete-btn {
+    background-color: #f44336;
+  }
+  
+  ul.to-do-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.to-do-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  ul.to-do-list li:last-child {
+    border-bottom: none;
+  }
+  
+  span {
+    flex: 1;
+  }
+  
+  /* Optional: Centering the to-do container for larger screens */
+  @media (min-width: 768px) {
+    .to-do-container {
+      justify-content: center;
+    }
+  }
+  
