@@ -1,6 +1,6 @@
 /* App.css */
 
-.to-do-container {
+/* .to-do-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,12 +70,12 @@
   
   span {
     flex: 1;
-  }
+  } */
   
   /* Optional: Centering the to-do container for larger screens */
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .to-do-container {
       justify-content: center;
     }
-  }
+  } */
   

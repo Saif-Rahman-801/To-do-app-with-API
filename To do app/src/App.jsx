@@ -7,6 +7,12 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const [editableTodo, setEditableTdo] = useState(null);
 
+  const fetchTodoList = () => {
+    fetch("http://localhost:3000/todoList")
+      .then((res) => res.json())
+      .then((data) => setToDoList(data));
+  };
+
   const createTodoHAndler = () => {
     if (toDoTitle) {
       const newTodo = {
@@ -21,9 +27,11 @@ function App() {
         },
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
-        
-      setToDoList([...toDoList, newTodo]);
+        .then(() => {
+          fetchTodoList();
+        });
+
+      // setToDoList([...toDoList, newTodo]);
       setToDoTitle("");
     } else {
       alert("please enter a valid content");
@@ -59,9 +67,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/todoList")
-      .then((res) => res.json())
-      .then((data) => setToDoList(data));
+    fetchTodoList();
   }, []);
 
   return (
