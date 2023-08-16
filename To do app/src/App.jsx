@@ -31,7 +31,6 @@ function App() {
           fetchTodoList();
         });
 
-      // setToDoList([...toDoList, newTodo]);
       setToDoTitle("");
     } else {
       alert("please enter a valid content");
@@ -39,9 +38,6 @@ function App() {
   };
 
   const deleteTodoHandler = (id) => {
-    // const newTodoList = toDoList.filter((item) => item.id !== id);
-    // setToDoList(newTodoList);
-    // setToDoTitle("");
     fetch(`http://localhost:3000/todoList/${id}`, {
       method: "DELETE",
       headers: {
@@ -73,15 +69,6 @@ function App() {
     }).then(() => {
       fetchTodoList();
     });
-    /* setToDoList(
-      toDoList.map((todo) => {
-        if (todo.id === editableTodo.id) {
-          todo.title = toDoTitle;
-          return todo;
-        }
-        return todo;
-      })
-    ); */
     setEditMode(false);
     setToDoTitle("");
     setEditableTdo(null);
