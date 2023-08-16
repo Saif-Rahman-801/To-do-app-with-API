@@ -39,9 +39,17 @@ function App() {
   };
 
   const deleteTodoHandler = (id) => {
-    const newTodoList = toDoList.filter((item) => item.id !== id);
-    setToDoList(newTodoList);
-    setToDoTitle("");
+    // const newTodoList = toDoList.filter((item) => item.id !== id);
+    // setToDoList(newTodoList);
+    // setToDoTitle("");
+    fetch(`http://localhost:3000/todoList/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    }).then(() => {
+      fetchTodoList();
+    });
   };
 
   const editTodoHandler = (id) => {
@@ -52,7 +60,20 @@ function App() {
   };
 
   const updateTodoHandler = () => {
-    setToDoList(
+    const updatableObj = {
+      ...editableTodo,
+      title: toDoTitle,
+    };
+    fetch(`http://localhost:3000/todoList/${editableTodo.id}`, {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify(updatableObj),
+    }).then(() => {
+      fetchTodoList();
+    });
+    /* setToDoList(
       toDoList.map((todo) => {
         if (todo.id === editableTodo.id) {
           todo.title = toDoTitle;
@@ -60,7 +81,7 @@ function App() {
         }
         return todo;
       })
-    );
+    ); */
     setEditMode(false);
     setToDoTitle("");
     setEditableTdo(null);
